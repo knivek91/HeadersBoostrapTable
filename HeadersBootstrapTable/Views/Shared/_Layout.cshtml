@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Headers In Boostrap Table</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,24 +16,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+                <a class="navbar-brand" href="https://github.com/knivek91/HeadersBoostrapTable">Get Code</a>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
+    </div><div class="container body-content">
+        <h3 class="text-center">Find the code in github <a href="https://github.com/knivek91/HeadersBoostrapTable" target="_blank">here</a></h3>
+        @RenderBody() 
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year</p>
         </footer>
     </div>
+    
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -48,5 +42,6 @@
     <script src="~/bootstrap-table/bootstrap-table.min.js"></script>
     <script src="~/bootstrap-table/bootstrap-table-export.min.js"></script>
     <script src="~/bootstrap-table/index.js"></script>
+
 </body>
 </html>

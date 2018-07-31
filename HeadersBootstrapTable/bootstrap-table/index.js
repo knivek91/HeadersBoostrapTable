@@ -918,9 +918,8 @@ var init = function () {
         pageSize: 10,
         pageList: [10, 20, 30, 150, 250, 350, 500],
         search: true,
-        showColumns: true,
+        showColumns: false,
         showRefresh: false,
-        minimumCountColumns: 2,
         showExport: true,
         exportTypes: ['excel', 'xml', 'txt', 'pdf'],
         exportOptions: {
@@ -941,7 +940,7 @@ var init = function () {
                 colspan: 2,
                 align: 'center',
                 valign: 'middle',
-                title: 'Row Span'
+                title: 'Empresa'
             }, {
                 title: 'Fecha',
                 field: 'fecha',
@@ -980,9 +979,94 @@ var init = function () {
     });
 };
 
+var init2 = function () {
+    $('#table2').bootstrapTable({
+
+        data: data,
+        cache: false,
+        height: 494,
+        striped: false,
+        pagination: true,
+        sortable: true,
+        locale: 'es-Ar',
+        sortable: true,
+        sortOrder: 'asc',
+        showToggle: true,
+        showPaginationSwitch: true,
+        pageSize: 10,
+        pageList: [10, 20, 30, 150, 250, 350, 500],
+        search: true,
+        showColumns: false,
+        showRefresh: false,
+        showExport: true,
+        exportTypes: ['excel', 'xml', 'txt', 'pdf'],
+        exportOptions: {
+            "fileName": "Reporte Header Columnas",
+            "worksheetName": "Prueba",
+            "jspdf": {
+                "autotable": {
+                    "styles": { "rowHeight": 20, "fontSize": 12 },
+                    "headerStyles": { "fillColor": 255, "textColor": 0 },
+                    "alternateRowStyles": { "fillColor": [236, 240, 241], "textColor": 0 }
+                }
+            }
+        },
+        clickToSelect: true,
+        columns: [
+            [{
+                colspan: 2,
+                align: 'center',
+                valign: 'middle',
+                title: 'Empresa'
+            }, {
+                title: 'Fecha',
+                colspan: 4,
+                align: 'center',
+                valign: 'middle',
+            }],
+            [{
+                colspan: 2,
+                align: 'center',
+                valign: 'middle',
+                title: 'Empresa 1'
+            }, {
+                title: 'Fecha: ' + new Date().toDateString(),
+                colspan: 4,
+                align: 'center',
+                valign: 'middle',
+            }]
+            , [{
+                field: 'id',
+                title: 'Id',
+                sortable: true
+            }, {
+                field: 'first_name',
+                title: 'First Name',
+                sortable: true
+            }, {
+                field: 'last_name',
+                title: 'Last Name',
+                sortable: true
+            }, {
+                field: 'email',
+                title: 'Email',
+                sortable: true
+            }, {
+                field: 'gender',
+                title: 'Gender',
+                sortable: true
+            }, {
+                field: 'ip_address',
+                title: 'IP Address',
+                sortable: true
+            }]
+
+
+        ]
+    });
+};
+
 $(document).ready(function () {
-
     init();
-
-
+    init2();
 });
